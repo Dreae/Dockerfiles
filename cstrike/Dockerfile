@@ -15,4 +15,6 @@ RUN /home/steam/steamcmd.sh +login anonymous +force_install_dir cstrike +app_upd
 
 WORKDIR cstrike
 
-ENTRYPOINT ["./srcds_run"]
+EXPOSE 27015/udp
+
+ENTRYPOINT ["./srcds_run", "-game cstrike", "-port 27015", "-console"]

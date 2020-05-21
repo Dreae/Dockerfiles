@@ -8,6 +8,6 @@ RUN echo "dev:dev" | chpasswd
 USER dev
 RUN cargo install starship
 ENV PATH="/home/dev/.cargo/bin:${PATH}"
-COPY --chown=dev:dev ./config.fish /home/dev/.config/fish/config.fish
+COPY --chown=dev:dev ./devcontainer/config.fish /home/dev/.config/fish/config.fish
 
 CMD fish
